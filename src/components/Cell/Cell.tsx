@@ -26,7 +26,7 @@ const Cell : FC<ICell> = ({ value }) => {
 
     return (
         <div className={`${styles.cell} ${show && styles.show}`} onClick={leftClick} onContextMenu={rightClick}>
-            { show && value }
+            { show && <span className={`${value === '1' && styles.blue} ${value === '2' && styles.green} ${value === '3' && styles.red} ${value === '4' && styles.darkBlue}`}>{value}</span> }
             { flag && <OouiFlagRtl color='red'/> }
         </div>
     )
