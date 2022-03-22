@@ -1,0 +1,20 @@
+
+
+.cell {
+    width: 25px;
+    height: 25px;
+    background-color: #A1CF6B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    font-weight: 600;
+}
+
+.show {
+    background-color: #7AC74F;
+}
+
+.cell:hover {
+    background-color: #7AC74F;
+}

@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import { Grid, Cell } from './components'
+import Game from './objects/game';
+
+const gridSize = {
+  width: 10,
+  height: 10
+}
+
+const quantityOfBomb = 10
 
 function App() {
+  // const [ bombsGrid, setBombsGrid ] = useState<boolean[]>([true, false])
+
+  const game = new Game(gridSize, quantityOfBomb)
+
+  const displayableGrid = game.grid.flat()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Grid>
+          { displayableGrid.map((value, index) => 
+            <Cell key={index} value={value}></Cell>
+          )}
+          
+        </Grid>
     </div>
   );
 }
