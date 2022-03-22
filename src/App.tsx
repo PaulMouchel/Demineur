@@ -12,7 +12,6 @@ const gridSize = {
 const quantityOfBomb = 10
 
 function App() {
-  // const [ bombsGrid, setBombsGrid ] = useState<boolean[]>([true, false])
 
   const game = new Game(gridSize, quantityOfBomb)
 
@@ -24,7 +23,6 @@ function App() {
           { displayableGrid.map((value, index) => 
             <Cell key={index} value={value}></Cell>
           )}
-          
         </Grid>
     </div>
   );
